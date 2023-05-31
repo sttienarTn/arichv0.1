@@ -28,7 +28,7 @@ public class Questionmangaer : MonoBehaviour
 
     private void Start()
     {
-        generateQuestion();
+     //   generateQuestion();
         scoretxt.SetText("score:0");
     }
 
@@ -61,7 +61,6 @@ public class Questionmangaer : MonoBehaviour
         if (isGameOver)
             return; // Ignore if the game is already over
 
-        QnA.RemoveAt(currentQuestion);
 
         // Change button color
         options[QnA[currentQuestion].CorrectAnswer].GetComponent<Image>().color = Color.green;
@@ -73,6 +72,8 @@ public class Questionmangaer : MonoBehaviour
                 characterAnimator.SetTrigger("angry");
             }
         }
+                QnA.RemoveAt(currentQuestion);
+
 
         if (QnA.Count > 0)
         {
@@ -119,7 +120,6 @@ public class Questionmangaer : MonoBehaviour
             currentQuestion = Random.Range(0, QnA.Count);
             Debug.Log("Current Question Index: " + currentQuestion);
             Questiontxt.text = QnA[currentQuestion].Question;
-            TextToSpeech.Instance.StartSpeak("salut je suis arich comme je peux vous aider");
             SetAnswer();
         }
         else

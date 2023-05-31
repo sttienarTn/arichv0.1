@@ -53,11 +53,6 @@ private int Clik=0;
         option3.gameObject.SetActive(act);
         myPanel.gameObject.SetActive(act);
         textfield.enabled = act;
-        StartSpeak("Welcome to the quiz");
-    }
-    void setup(string code)
-    {
-        TextToSpeech.Instance.Setting(code, 1, 1);
     }
 
     public void StartQuizInterface()
@@ -111,14 +106,16 @@ private void Monum2Click()
 
         quest.generateQuestion();
          StartQuizQuestion(true);
+       TextToSpeech.Instance.StartSpeak("bienvenue dans la quiz le byrsa");
+
 
         Debug.Log("First click action!");
     }
     else if (clickCount % 2 == 0)
     {
-        s3.DOAnchorPos(new Vector2(0.00099182f,-18f), 0.25f);
-        s1.DOAnchorPos(new Vector2(0.00099182f,-378f), 0.25f);
-        s2.DOAnchorPos(new Vector2(0.0009182f,248),0.25f);
+          s3.DOAnchorPos(new Vector2(0.00099182f,265), 0.25f);
+        s1.DOAnchorPos(new Vector2(0.00099182f,-47f), 0.25f);
+        s2.DOAnchorPos(new Vector2(0.0009182f,542.7f),0.25f);
          Vector3 currentScale = s1.transform.localScale;
         Vector3 targetScale = currentScale * 1f;
         s2.transform.DOScale(targetScale, 0.25f);
@@ -162,13 +159,14 @@ s3.transform.DOMove(targetPosition, 0.25f);
 s3.transform.DOScale(targetScale, 0.25f);
             quest.generateQuestion();
             StartQuizQuestion(true);
+           TextToSpeech.Instance.StartSpeak("bienvenue dans la quiz theater");
 
            Debug.Log("Monum3 button clicked!");}
            else if (Clik % 2 == 0)
     {
-        s3.DOAnchorPos(new Vector2(0.00099182f,-18f), 0.25f);
-        s1.DOAnchorPos(new Vector2(0.00099182f,-378f), 0.25f);
-        s2.DOAnchorPos(new Vector2(0.0009182f,248),0.25f);
+        s3.DOAnchorPos(new Vector2(0.00099182f,265), 0.25f);
+        s1.DOAnchorPos(new Vector2(0.00099182f,-47f), 0.25f);
+        s2.DOAnchorPos(new Vector2(0.0009182f,542.7f),0.25f);
          Vector3 currentScale = s1.transform.localScale;
         Vector3 targetScale = currentScale * 1f;
         s3.transform.DOScale(targetScale, 0.25f);
