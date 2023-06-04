@@ -103,7 +103,7 @@ private void Monum2Click()
 
         s2.transform.DOMove(targetPosition, 0.25f);
         s2.transform.DOScale(targetScale, 0.25f);
-
+       quest.change("byrsa");
         quest.generateQuestion();
          StartQuizQuestion(true);
        TextToSpeech.Instance.StartSpeak("bienvenue dans la quiz le byrsa");
@@ -157,6 +157,7 @@ s3.transform.DOMove(targetPosition, 0.25f);
 
 // Scale the object to the target scale over the same duration
 s3.transform.DOScale(targetScale, 0.25f);
+            quest.change("Theater");
             quest.generateQuestion();
             StartQuizQuestion(true);
            TextToSpeech.Instance.StartSpeak("bienvenue dans la quiz theater");
@@ -186,7 +187,7 @@ s3.transform.DOMove(targetPosition, 0.25f);
 
 // Scale the object to the target scale over the same duration
 s3.transform.DOScale(targetScale, 0.25f);
-            quest.generateQuestion();
+         
             StartQuizQuestion(true);
 
            Debug.Log("Monum3 button clicked!");}
