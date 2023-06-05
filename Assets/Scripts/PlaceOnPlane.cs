@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using TextSpeech;
 
     /// <summary>
     /// Listens for touch events and performs an AR raycast from the screen touch point.
@@ -43,7 +44,7 @@ using UnityEngine.XR.ARSubsystems;
 
             if (placementUpdate == null)
                 placementUpdate = new UnityEvent();
-
+                 
                 placementUpdate.AddListener(DiableVisual);
         }
 
@@ -73,6 +74,8 @@ using UnityEngine.XR.ARSubsystems;
                 if (spawnedObject == null)
                 {
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                     TextToSpeech.Instance.StartSpeak("salut je suis arich votre guide touristique");
+
                     
                 }
                 else
